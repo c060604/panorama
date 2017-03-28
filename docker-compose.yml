@@ -1,0 +1,7 @@
+version: '2'
+services:
+  panorama:
+    build: .
+    volumes:
+      - .:/code
+    restart: always
