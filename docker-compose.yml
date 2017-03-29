@@ -4,4 +4,3 @@ services:
     build: .
     volumes:
       - .:/code
-    restart: always
