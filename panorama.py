@@ -105,7 +105,7 @@ def crop(img):
     tmp = tmp[0:height, left:right]
     return tmp
 
-def complete(pano):
+def complement_sky(pano):
     tmp = imutils.resize(pano, width=WIDTH)
     rows, cols = tmp.shape[:2]
     border = HEIGHT - rows
@@ -156,7 +156,7 @@ if __name__ == '__main__':
     pano = stitch(files)
     if pano is not None:
         pano = crop(pano)
-        pano = complete(pano)
+        # pano = complement_sky(pano)
         cv2.imwrite(RESULT, pano)
     else:
         print('error')
